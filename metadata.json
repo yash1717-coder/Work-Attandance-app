@@ -1,0 +1,6 @@
+{
+  "name": "WorkSync",
+  "description": "Offline Face Recognition Attendance and Payroll System using IndexedDB",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
