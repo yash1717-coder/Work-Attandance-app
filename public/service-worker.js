@@ -5,7 +5,8 @@ const STATIC_ASSETS = [
   '/manifest.json',
   '/icon-192.png',
   '/icon-512.png',
-  '/icon-maskable.png',
+  '/maskable-192.png',
+  '/maskable-512.png',
   'https://cdn.jsdelivr.net/npm/@vladmandic/face-api/dist/face-api.js',
   'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap'
 ];
