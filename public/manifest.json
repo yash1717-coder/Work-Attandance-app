@@ -3,12 +3,21 @@
   "name": "WorkSync Attendant",
   "short_name": "WorkSync",
   "description": "Offline Face Recognition Attendance and Payroll System using IndexedDB",
-  "categories": ["business", "productivity", "utilities"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "scope": "/",
   "start_url": "/",
   "display": "standalone",
+  "display_override": [
+    "standalone",
+    "window-controls-overlay",
+    "minimal-ui",
+    "browser"
+  ],
   "orientation": "portrait-primary",
   "background_color": "#0A0A0C",
   "theme_color": "#121214",
+  "categories": ["business", "productivity", "utilities"],
   "icons": [
     {
       "src": "/icon-192.png",
@@ -45,5 +54,125 @@
       "label": "WorkSync Attendance Dashboard"
     }
   ],
+  "shortcuts": [
+    {
+      "name": "Kiosk Scanner Mode",
+      "short_name": "Scanner",
+      "description": "Launch directly into face recognition kiosk mode",
+      "url": "/?mode=kiosk",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Admin Dashboard",
+      "short_name": "Admin",
+      "description": "Access admin controls, reports, and payroll",
+      "url": "/?mode=admin",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "share_target": {
+    "action": "/",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "file_handlers": [
+    {
+      "action": "/",
+      "accept": {
+        "text/csv": [".csv"]
+      },
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ],
+      "launch_type": "single-client"
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+worksync",
+      "url": "/?protocol=%s"
+    }
+  ],
+  "launch_handler": {
+    "client_mode": ["focus-existing", "auto"]
+  },
+  "note_taking": {
+    "new_note_url": "/?note=new"
+  },
+  "widgets": [
+    {
+      "name": "WorkSync Quick Clock State",
+      "short_name": "WorkSync Widget",
+      "description": "Quick view of current work session time and logs",
+      "tag": "worksync_widget",
+      "template": "worksync-widget-template",
+      "ms_ac_template": "",
+      "data": "",
+      "type": "application/json",
+      "screenshots": [
+        {
+          "src": "https://picsum.photos/seed/worksync-widget/200/200?blur=1",
+          "sizes": "200x200",
+          "type": "image/jpeg",
+          "label": "WorkSync widget"
+        }
+      ],
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "scope_extensions": [
+    {
+      "origin": "https://*.work-attandance-app.vercel.app"
+    },
+    {
+      "origin": "https://work-attandance-app.vercel.app"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.yash.workattendance",
+      "id": "com.yash.workattendance"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/app/work-sync-attendance/id123456789"
+    },
+    {
+      "platform": "windows",
+      "url": "https://www.microsoft.com/store/apps/9nblggh4n123",
+      "id": "9nblggh4n123"
+    }
+  ],
+  "iarc_rating_id": "e4a23b9d-5431-4a11-8521-b0db04e9c71a",
   "prefer_related_applications": false
 }
