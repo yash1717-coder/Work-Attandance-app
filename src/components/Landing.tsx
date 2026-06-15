@@ -43,6 +43,43 @@ export function Landing({
   const [aPw, setAPw] = useState("");
   const [adminErr, setAdminErr] = useState("");
 
+  // PWA Install prompt state
+  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
+  const [isAppInstalled, setIsAppInstalled] = useState(false);
+
+  useEffect(() => {
+    const handleBeforeInstall = (e: Event) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+    };
+
+    const handleAppInstalled = () => {
+      setIsAppInstalled(true);
+      setDeferredPrompt(null);
+    };
+
+    window.addEventListener("beforeinstallprompt", handleBeforeInstall);
+    window.addEventListener("appinstalled", handleAppInstalled);
+
+    // Check if building under standalone frame
+    if (window.matchMedia("(display-mode: standalone)").matches || (navigator as any).standalone) {
+      setIsAppInstalled(true);
+    }
+
+    return () => {
+      window.removeEventListener("beforeinstallprompt", handleBeforeInstall);
+      window.removeEventListener("appinstalled", handleAppInstalled);
+    };
+  }, []);
+
+  const handleInstallClick = async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log(`User responded to install prompt: ${outcome}`);
+    setDeferredPrompt(null);
+  };
+
   // Kiosk Scanner Mode States
   const [isKiosk, setIsKiosk] = useState(false);
   const [shiftType, setShiftType] = useState<"regular" | "ot">("regular");
@@ -412,6 +449,16 @@ export function Landing({
       >
         🛡️ Access Administration Control
       </button>
+
+      {/* PWA Install App button */}
+      {deferredPrompt && (
+        <button
+          className="absolute top-4 right-4 bg-indigo-650 border border-indigo-500/20 hover:bg-indigo-600 text-white font-semibold px-4.5 py-2.5 rounded-xl text-xs flex items-center gap-2 transition-all outline-none z-50 backdrop-blur-md shadow-lg animate-bounce duration-1000"
+          onClick={handleInstallClick}
+        >
+          📥 Install WorkSync App
+        </button>
+      )}
 
       {!isKiosk ? (
         <div className="w-full max-w-md bg-[#121214] border border-white/5 rounded-2xl p-8 shadow-2xl text-center relative z-10">

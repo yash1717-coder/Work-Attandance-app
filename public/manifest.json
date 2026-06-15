@@ -1,0 +1,48 @@
+{
+  "name": "WorkSync Attendant",
+  "short_name": "WorkSync",
+  "description": "Offline Face Recognition Attendance and Payroll System using IndexedDB",
+  "categories": ["business", "productivity", "utilities"],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0A0A0C",
+  "theme_color": "#121214",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://picsum.photos/seed/worksync-mobile/390/844?blur=1",
+      "sizes": "390x844",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "WorkSync Smart Mobile Clocking"
+    },
+    {
+      "src": "https://picsum.photos/seed/worksync-desktop/1280/725?blur=1",
+      "sizes": "1280x725",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "WorkSync Attendance Dashboard"
+    }
+  ],
+  "prefer_related_applications": false
+}
