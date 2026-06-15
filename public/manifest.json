@@ -1,4 +1,5 @@
 {
+  "id": "com.yash.workattendance",
   "name": "WorkSync Attendant",
   "short_name": "WorkSync",
   "description": "Offline Face Recognition Attendance and Payroll System using IndexedDB",
