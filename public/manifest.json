@@ -133,8 +133,8 @@
       "description": "Quick view of current work session time and logs",
       "tag": "worksync_widget",
       "template": "worksync-widget-template",
-      "ms_ac_template": "",
-      "data": "",
+      "ms_ac_template": "/widgets/worksync_widget.json",
+      "data": "/widgets/worksync_widget_data.json",
       "type": "application/json",
       "screenshots": [
         {
@@ -157,9 +157,6 @@
     "preferred_width": 400
   },
   "scope_extensions": [
-    {
-      "origin": "https://*.work-attandance-app.vercel.app"
-    },
     {
       "origin": "https://work-attandance-app.vercel.app"
     }

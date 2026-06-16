@@ -7,7 +7,15 @@ const STATIC_ASSETS = [
   '/icon-512.png',
   '/maskable-192.png',
   '/maskable-512.png',
-  'https://cdn.jsdelivr.net/npm/@vladmandic/face-api/dist/face-api.js',
+  '/face-api.js',
+  '/models/ssd_mobilenetv1_model-weights_manifest.json',
+  '/models/ssd_mobilenetv1_model.bin',
+  '/models/face_landmark_68_model-weights_manifest.json',
+  '/models/face_landmark_68_model.bin',
+  '/models/face_recognition_model-weights_manifest.json',
+  '/models/face_recognition_model.bin',
+  '/widgets/worksync_widget.json',
+  '/widgets/worksync_widget_data.json',
   'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap'
 ];
 

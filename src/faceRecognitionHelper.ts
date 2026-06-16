@@ -7,7 +7,7 @@ import { Employee } from "./db";
 
 let _faceLoaded = false;
 let _faceLoading = false;
-const MODEL_URL = "https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model";
+const MODEL_URL = "/models";
 
 // Asynchronously pre-loads and initializes SSD Mobilenet and Face Recognition models
 export async function loadFaceApi(): Promise<boolean> {
@@ -35,7 +35,7 @@ export async function loadFaceApi(): Promise<boolean> {
 
     // Dynamic fallback script injector just in case
     const script = document.createElement("script");
-    script.src = "https://cdn.jsdelivr.net/npm/@vladmandic/face-api/dist/face-api.js";
+    script.src = "/face-api.js";
     script.onload = () => initFaceApiModels(resolve);
     script.onerror = () => {
       _faceLoading = false;
